@@ -1,6 +1,4 @@
-package gerenciadorContas;
-
-import conta.ContaBancaria;
+package banco;
 
 import java.util.List;
 

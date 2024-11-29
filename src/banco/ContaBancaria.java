@@ -1,4 +1,4 @@
-package conta;
+package banco;
 
 public class ContaBancaria {
     private String numeroConta;
