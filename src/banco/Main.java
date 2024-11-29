@@ -6,9 +6,8 @@ public class Main {
     public static void main(String[] args) {
         GerenciadorBanco banco = new GerenciadorBanco();
         Scanner scanner = new Scanner(System.in);
-       
-        while(true){
 
+        while(true){
             System.out.println("1- Criar conta");
             System.out.println("2- Depositar");
             System.out.println("3- Sacar");
@@ -16,10 +15,7 @@ public class Main {
             System.out.println("5- Remover contas");
             System.out.println("6- Sair");
             System.out.println("Escolha uma opção.");
-
             int opcao = scanner.nextInt();
-
-
             switch(opcao){
 
                 case 1:
@@ -36,11 +32,42 @@ public class Main {
                     numero = scanner.next();
 
                     ContaBancaria conta = banco.buscarConta(numero);
-                    if(conta != null){
+                    if(conta != null) {
                         System.out.println("Valor do deposito: ");
                         double valor = scanner.nextDouble();
-
+                        banco.depositar(valor);
                     }
+                    break;
+                case 3:
+                    System.out.println("Numero da conta");
+                    String numero = scanner.nextLine();
+                    ContaBancaria conta = banco.buscarConta(numero);
+                    if(conta != null){
+                        System.out.print("Digite o valor que deseja sacar: ");
+                        double valor = sc.nextDouble();
+                        sc.nextLine();
+                        conta.sacar(valor);
+                    }
+                    break;
+                case 4:
+                    System.out.println("Listando contas: ");
+                    conta.listarContas();
+                    break;
+                case 5:
+                    System.out.println("Numero da conta: ");
+                    numero = scanner.next();
+
+                    ContaBancaria conta = banco.buscarConta(numero);
+                    if(conta != null) {
+                        banco.removerConta(conta);
+                    }
+                    break;
+                case 6:
+                    System.out.println("Obrigado por usar nosso banco!!");
+                    break;
+                default:
+                    System.out.println("Opção inválida.");
+
             }
         }
         

@@ -1,14 +1,23 @@
 package banco;
 
 public class ContaBancaria {
+    public static int numeroGlobal = 1;
     private String numeroConta;
     public String titular;
     private Double saldoAtual;
 
-    public ContaBancaria(String numeroConta, String titular){
-        this.numeroConta = numeroConta;
+    public ContaBancaria(String titular){
+        this.numeroConta = numeroGlobal;
         this.titular = titular;
         this.saldoAtual = 0.0;
+        numeroGlobal++;
+
+    }
+    public ContaBancaria(String titular, double depositoInicial){
+        this.numeroConta = numeroGlobal;
+        this.titular = titular;
+        this.saldoAtual = depositar(depositoInicial);
+        numeroGlobal++;
     }
 
     public String getNumeroConta() {
@@ -35,7 +44,7 @@ public class ContaBancaria {
         this.saldoAtual = saldoAtual;
     }
 
-    public void Depositar(Double valor){
+    public void depositar(Double valor){
         if(valor > 0){
             this.saldoAtual += valor;
         }else{
@@ -43,7 +52,7 @@ public class ContaBancaria {
         }
     }
 
-    public void Sacar(Double valor){
+    public void sacar(Double valor){
         if(valor <= 0){
             System.out.println("Digite um valor positivo");
         }
