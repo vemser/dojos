@@ -1,3 +1,5 @@
+package conta;
+
 public class ContaBancaria {
     private String numeroConta;
     public String titular;
@@ -47,10 +49,19 @@ public class ContaBancaria {
         }
         else if(valor <= this.saldoAtual){
             this.saldoAtual -= valor;
+            System.out.println("Valor da conta atual: " + saldoAtual);
         }else {
             System.out.println("Digite um valor menor ou igual ao seu saldo atual");
         }
 
     }
 
+    @Override
+    public String toString() {
+        return "ContaBancaria{" +
+                "numeroConta='" + numeroConta + '\'' +
+                ", titular='" + titular + '\'' +
+                ", saldoAtual=" + saldoAtual +
+                '}';
+    }
 }
