@@ -7,8 +7,12 @@ public class Main {
   public static void main(String[] args) {
     GerenciadorBanco banco = new GerenciadorBanco();
     Scanner scanner = new Scanner(System.in);
+    ContaBancaria conta;
+    String numero;
 
-    while (true) {
+    boolean running = true;
+
+    while (running) {
       System.out.println("1- Criar conta");
       System.out.println("2- Depositar");
       System.out.println("3- Sacar");
@@ -20,11 +24,11 @@ public class Main {
       int opcao = scanner.nextInt();
       scanner.nextLine();
 
+
       switch (opcao) {
         //Criar conta
         case 1:
-          System.out.println("Numero da conta: ");
-          String numero = scanner.next();
+
           System.out.println("Nome do titular: ");
           String titular = scanner.next();
 
@@ -37,7 +41,7 @@ public class Main {
           numero = scanner.next();
           scanner.nextLine();
 
-          ContaBancaria conta = banco.buscarConta(numero);
+          conta = banco.buscarConta(numero);
           if (conta != null) {
             System.out.println("Valor do deposito: ");
             double valor = scanner.nextDouble();
@@ -48,21 +52,21 @@ public class Main {
 
         case 3:
           System.out.println("Numero da conta");
-          String numero2 = scanner.nextLine();
-          ContaBancaria conta3 = banco.buscarConta(numero2);
+          numero = scanner.nextLine();
+          conta = banco.buscarConta(numero);
 
 
-          if (conta3 != null) {
+          if (conta != null) {
             System.out.print("Digite o valor que deseja sacar: ");
             double valor = scanner.nextDouble();
             scanner.nextLine();
-            conta3.sacar(valor);
+            conta.sacar(valor);
           }
           break;
         case 4:
           System.out.println("Numero da conta");
           numero = scanner.nextLine();
-          banco.buscarConta(numero);
+          System.out.println(banco.buscarConta(numero));
           break;
         case 5:
           System.out.println("Listando contas: ");
@@ -72,16 +76,17 @@ public class Main {
         case 6:
           System.out.println("Numero da conta: ");
           numero = scanner.next();
-          ContaBancaria conta2 = banco.buscarConta(numero);
+          conta = banco.buscarConta(numero);
 
-          if (conta2 != null) {
-            banco.removerConta(conta2.getNumeroConta());
+          if (conta != null) {
+            banco.removerConta(conta.getNumeroConta());
           }
           break;
 
         case 7:
           System.out.println("Obrigado por usar nosso banco!!");
-          return;
+          running= false;
+          break;
 
         default:
           System.out.println("Opção inválida.");
