@@ -47,9 +47,10 @@ public class ContaBancaria {
         }
         else if(valor <= this.saldoAtual){
             this.saldoAtual -= valor;
-        }else{
+        }else {
             System.out.println("Digite um valor menor ou igual ao seu saldo atual");
         }
+
     }
 
 }
