@@ -6,11 +6,15 @@ public class Financiamento {
     private double valorFinanciado;
     private double taxaJurosAnual ;
     private int prazoMeses; 
-    private Financiamento tipoFinanciamento;
-    private ContaBancaria contaBancaria = new ContaBancaria(null);
+    private TipoFinanciamento tipoFinanciamento;
+    private ContaBancaria contaBancaria;
 
-    public Financiamento (){
-
+    public  Financiamento (double valorFinanciado, double taxasJurosAnual, int prazoMeses, TipoFinanciamento tipoFinanciamento, ContaBancaria contaBancaria){
+        this.valorFinanciado = valorFinanciado;
+        this.taxasJurosAnual = taxaJurosAnual;
+        this.prazoMeses = prazoMeses;
+        this.tipoFinanciamento = tipoFinanciamento; 
+        this.contaBancaria = contaBancaria; 
     }
 
     public double getValorFinanciado() {
@@ -37,11 +41,11 @@ public class Financiamento {
         this.prazoMeses = prazoMeses;
     }
 
-    public Financiamento getTipoFinanciamento() {
+    public TipoFinanciamento getTipoFinanciamento() {
         return tipoFinanciamento;
     }
 
-    public void setTipoFinanciamento(Financiamento tipoFinanciamento) {
+    public void setTipoFinanciamento(TipoFinanciamento tipoFinanciamento) {
         this.tipoFinanciamento = tipoFinanciamento;
     }
 
