@@ -19,7 +19,6 @@ public class GerenciadorBanco {
         this.contas = contas;
     }
 
-
     public void adicionarConta(ContaBancaria conta) {
         contas.add(conta);
     }
@@ -46,13 +45,12 @@ public class GerenciadorBanco {
         return null;
     }
 
-    public void listarContas(){
-        if(contas.isEmpty()){
+    public void listarContas() {
+        if (contas.isEmpty()) {
             System.out.println("Nenhuma conta encontrada no momento!");
             return;
         }
-
-        for(ContaBancaria conta: contas){
+        for (ContaBancaria conta : contas) {
             System.out.println(conta);
         }
     }

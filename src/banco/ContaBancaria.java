@@ -6,17 +6,17 @@ public class ContaBancaria {
     public String titular;
     private Double saldoAtual;
 
-    public ContaBancaria(String titular){
-        this.numeroConta = numeroGlobal;
+    public ContaBancaria(String titular) {
+        this.numeroConta = String.valueOf(numeroGlobal);
         this.titular = titular;
         this.saldoAtual = 0.0;
         numeroGlobal++;
-
     }
-    public ContaBancaria(String titular, double depositoInicial){
-        this.numeroConta = numeroGlobal;
+
+    public ContaBancaria(String titular, double depositoInicial) {
+        this.numeroConta = String.valueOf(numeroGlobal);
         this.titular = titular;
-        this.saldoAtual = depositar(depositoInicial);
+        depositar(depositoInicial);
         numeroGlobal++;
     }
 
@@ -44,22 +44,21 @@ public class ContaBancaria {
         this.saldoAtual = saldoAtual;
     }
 
-    public void depositar(Double valor){
-        if(valor > 0){
+    public void depositar(Double valor) {
+        if (valor > 0) {
             this.saldoAtual += valor;
-        }else{
+        } else {
             System.out.println("Só é possível depositar valores positivos");
         }
     }
 
-    public void sacar(Double valor){
-        if(valor <= 0){
+    public void sacar(Double valor) {
+        if (valor <= 0) {
             System.out.println("Digite um valor positivo");
-        }
-        else if(valor <= this.saldoAtual){
+        } else if (valor <= this.saldoAtual) {
             this.saldoAtual -= valor;
             System.out.println("Valor da conta atual: " + saldoAtual);
-        }else {
+        } else {
             System.out.println("Digite um valor menor ou igual ao seu saldo atual");
         }
 
