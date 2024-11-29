@@ -1,13 +1,14 @@
 package banco;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class GerenciadorBanco {
 
     private List<ContaBancaria> contas;
 
-    public GerenciadorBanco(List<ContaBancaria> contas) {
-        this.contas = contas;
+    public GerenciadorBanco() {
+        this.contas = new ArrayList<ContaBancaria>();
     }
 
     public List<ContaBancaria> getContas() {

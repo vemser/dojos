@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        GerenciadorBanco banco = new GerenciadorBanco();
         Scanner scanner = new Scanner(System.in);
        
         while(true){
@@ -21,8 +22,25 @@ public class Main {
 
             switch(opcao){
 
-                case 1: 
-                    System.out.println("");
+                case 1:
+                    System.out.println("Numero da conta: ");
+                    String numero = scanner.next();
+                    System.out.println("Nome do titular: ");
+                    String titular = scanner.next();
+
+                    banco.adicionarConta(new ContaBancaria(numero, titular));
+                    System.out.println("Conta adicionada com sucesso!");
+                    break;
+                case 2:
+                    System.out.println("Numero da conta: ");
+                    numero = scanner.next();
+
+                    ContaBancaria conta = banco.buscarConta(numero);
+                    if(conta != null){
+                        System.out.println("Valor do deposito: ");
+                        double valor = scanner.nextDouble();
+
+                    }
             }
         }
         
