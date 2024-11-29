@@ -9,9 +9,9 @@ public class Financiamento {
     private TipoFinanciamento tipoFinanciamento;
     private ContaBancaria contaBancaria;
 
-    public  Financiamento (double valorFinanciado, double taxasJurosAnual, int prazoMeses, TipoFinanciamento tipoFinanciamento, ContaBancaria contaBancaria){
+    public  Financiamento (double valorFinanciado, double taxaJurosAnual, int prazoMeses, TipoFinanciamento tipoFinanciamento, ContaBancaria contaBancaria){
         this.valorFinanciado = valorFinanciado;
-        this.taxasJurosAnual = taxaJurosAnual;
+        this.taxaJurosAnual = taxaJurosAnual;
         this.prazoMeses = prazoMeses;
         this.tipoFinanciamento = tipoFinanciamento; 
         this.contaBancaria = contaBancaria; 
@@ -57,6 +57,10 @@ public class Financiamento {
         this.contaBancaria = contaBancaria;
     }
 
+    public double calculaParcelaMes(){
+        double taxaJurosMensal = taxaJurosAnual/12/100.0;
+        return (valorFinanciado*taxaJurosMensal)/(1-Math.pow(1+taxaJurosMensal, -prazoMeses));
 
-    
+    }
+
 }
