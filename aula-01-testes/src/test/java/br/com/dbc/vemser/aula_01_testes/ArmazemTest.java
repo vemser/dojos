@@ -65,13 +65,12 @@ class ArmazemTest {
     }
 
     @Test
-    void deveAtualizarUmProdutoComSucesso() {
+    void deveAtualizarUmProdutoComSucesso() throws Exception {
         Produto produtoNovo = new Produto(1, "Pasta de dente", 0.4, StatusProduto.ATIVO, TipoProduto.HIGIENE);
 
         armazem.adicionarProduto(produtoNovo);
         produtoNovo.setNome("Qualquer produto");
-
-        assertEquals(1, armazem.getProdutos().size());
+        armazem.alterarProduto(1, produtoNovo);
 
         assertEquals("Qualquer produto", armazem.getProdutos().get(0).getNome());
     }
@@ -81,7 +80,6 @@ class ArmazemTest {
         Produto produtoNovo = new Produto(1, "Pasta de dente", 0.4, StatusProduto.ATIVO, TipoProduto.HIGIENE);
 
         armazem.adicionarProduto(produtoNovo);
-
 
         assertEquals(1, armazem.getProdutos().size());
 
