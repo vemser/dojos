@@ -15,7 +15,8 @@ class ArmazemTest {
     void setup() {
 //        Produto produto1 = new Produto(1, "Escova de dentes", 0.3, StatusProduto.ATIVO, TipoProduto.HIGIENE);
 //        Produto produto2 = new Produto(2, "Notebook", 1.4, StatusProduto.ATIVO, TipoProduto.ELETRONICO);
-//        Produto produto3 = new Produto(3, "Tortuguita ed. Especial", 0.1, StatusProduto.INATIVO, TipoProduto.ALIMENTO);
+//        Produto produto3 = new Produto(3, "Tortuguita ed. Especial", 0.1, StatusProduto.INATIVO, TipoProduto
+//        .ALIMENTO);
 
         List<Produto> produtos = new ArrayList<>();
         armazem = new Armazem(1, "Caldeira - Porto Alegre", produtos);
@@ -69,20 +70,22 @@ class ArmazemTest {
         Produto produtoNovo = new Produto(1, "Pasta de dente", 0.4, StatusProduto.ATIVO, TipoProduto.HIGIENE);
 
         armazem.adicionarProduto(produtoNovo);
-        produtoNovo.setNome("Qualquer produto");
-        armazem.alterarProduto(1, produtoNovo);
+
+        Produto produtoNovoAlterado = new Produto(1, "Qualquer produto", 0.4, StatusProduto.ATIVO, TipoProduto.HIGIENE);
+
+        armazem.alterarProduto(1, produtoNovoAlterado);
 
         assertEquals("Qualquer produto", armazem.getProdutos().get(0).getNome());
     }
 
     @Test
-    void deveAtualizarUmProdutoComFracasso() {
+    void deveAtualizarUmProdutoComFracasso() throws Exception {
         Produto produtoNovo = new Produto(1, "Pasta de dente", 0.4, StatusProduto.ATIVO, TipoProduto.HIGIENE);
 
         armazem.adicionarProduto(produtoNovo);
 
-        assertEquals(1, armazem.getProdutos().size());
+        Produto produtoNovoAlterado = new Produto(1, "", 0.4, StatusProduto.ATIVO, TipoProduto.HIGIENE);
 
-        assertEquals("Qualquer produto", armazem.getProdutos().get(0).getNome());
+        assertThrows(Exception.class, () -> armazem.alterarProduto(1, produtoNovoAlterado));
     }
 }

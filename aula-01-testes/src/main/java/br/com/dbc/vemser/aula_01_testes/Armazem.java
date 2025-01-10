@@ -9,6 +9,8 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
+import static java.util.Objects.*;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -34,6 +36,10 @@ public class Armazem {
 
     public Produto alterarProduto(Integer idProduto, Produto produtoAlterado) throws Exception {
         Produto produtoEncontrado = buscarProdutoPorId(idProduto);
+
+        if (produtoAlterado.getNome().isEmpty()) {
+            throw new Exception("Nome não pode ser vazio");
+        }
 
         produtoEncontrado.setPeso(produtoAlterado.getPeso());
         produtoEncontrado.setNome(produtoAlterado.getNome());
