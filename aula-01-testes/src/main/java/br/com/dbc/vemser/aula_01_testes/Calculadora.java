@@ -21,4 +21,8 @@ public class Calculadora {
 
         return a / b;
     }
+
+    public double potenciacao(double numero, double potencia) {
+        return Math.pow(numero, potencia);
+    }
 }

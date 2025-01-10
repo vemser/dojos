@@ -92,4 +92,47 @@ class CalculadoraTest {
 
         assertThrows(ArithmeticException.class, () -> calculadora.dividir(a, b));
     }
+
+    @Test
+    void testPotenciacaoCorreta(){
+        double numero = 5.0;
+        double potencia = 2.0;
+        double resultadoEsperado = 25.0;
+
+        double resultado = calculadora.potenciacao(numero, potencia);
+
+        assertEquals(resultadoEsperado, resultado);
+    }
+
+    @Test
+    void testPotenciacaoZeroRetornaUm() {
+        double numero = 5.0;
+        double potencia = 0.0;
+        double resultadoEsperado = 1.0;
+
+        double resultado = calculadora.potenciacao(numero, potencia);
+
+        assertEquals(resultadoEsperado, resultado);
+    }
+
+    @Test
+    void testPotenciacaoNumeroNegativo() {
+        double numero = 5.0;
+        double potencia = -2.0;
+        double resultadoEsperado = 0.04;
+
+        double resultado = calculadora.potenciacao(numero, potencia);
+
+        assertEquals(resultadoEsperado, resultado);
+    }
+
+    @Test
+    void testRadiciacaoNumeroPositivo() {
+        double a = 4.0;
+        double resultadoEsperado = 2;
+
+        double resultado = calculadora.radiciacao(a);
+
+        assertEquals(resultadoEsperado, resultado);
+    }
 }
