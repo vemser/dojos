@@ -25,4 +25,12 @@ public class Calculadora {
     public double potenciacao(double numero, double potencia) {
         return Math.pow(numero, potencia);
     }
+
+    public double radiciacao(double a) {
+
+        if (a < 0){
+            throw new ArithmeticException("Não é possivel fazer radiciação de numero negativo");
+        }
+        return Math.abs(a);
+    }
 }

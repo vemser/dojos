@@ -135,4 +135,11 @@ class CalculadoraTest {
 
         assertEquals(resultadoEsperado, resultado);
     }
+
+    @Test
+    void testRadiciacaoNumeroNegativo() {
+        double a = -4.0;
+
+        assertThrows(ArithmeticException.class, () -> calculadora.radiciacao(a));
+    }
 }

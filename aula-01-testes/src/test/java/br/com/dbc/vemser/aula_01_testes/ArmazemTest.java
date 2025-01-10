@@ -41,4 +41,26 @@ class ArmazemTest {
         assertEquals(1, armazem.getProdutos().size());
         assertEquals("Escova", armazem.getProdutos().get(0).getNome());
     }
+
+    @Test
+    void deveRemoverUmProdutoComSucesso() {
+        Produto produtoNovo = new Produto(2, "Escova", 0.4, StatusProduto.ATIVO, TipoProduto.HIGIENE);
+
+        armazem.adicionarProduto(produtoNovo);
+
+        armazem.removerProduto(produtoNovo);
+
+        assertEquals(0, armazem.getProdutos().size());
+    }
+
+    @Test
+    void deveRemoverUmProdutoComFracasso() {
+        Produto produtoNovo = new Produto(2, "Escova", 0.4, StatusProduto.ATIVO, TipoProduto.HIGIENE);
+
+        armazem.adicionarProduto(produtoNovo);
+
+        armazem.removerProduto(produtoNovo);
+
+        assertEquals(0, armazem.getProdutos().size());
+    }
 }
