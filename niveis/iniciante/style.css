@@ -1,0 +1,14 @@
+.container {
+    width: 800px;
+    height: 716px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 8px 24px;
+}
+
+.card {
+    background-color: blue;
+    width: 220px;
+    height: 198px;
+}
