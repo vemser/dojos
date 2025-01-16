@@ -6,7 +6,9 @@
 
 .secao{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 110px;
 }
 .card-pequeno{
     justify-content: center;
