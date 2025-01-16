@@ -3,3 +3,21 @@
     height: 400px;
     background-color: blue;
 }
+
+.secao{
+    width: 100vh;
+    display: flex;
+    justify-content: space-around;
+}
+.card-pequeno{
+    justify-content: center;
+    width: 350px;
+    height: 190px;
+    background-color: blue;
+}
+
+.card-pequeno{
+    width: 350px;
+    height: 190px;
+    background-color: blue;
+}
