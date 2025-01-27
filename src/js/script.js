@@ -16,9 +16,9 @@ form.addEventListener('submit', function (event) {
         return;
     }
     
-    let pet = { nome: nome, especie: especie, raca: raca, idade: idade, historicoPet: historicoPet }
-    pets.push(pet)
-    console.log("ARRAY PETS: ", pets)
+    let pet = { nome: nome, especie: especie, raca: raca, idade: idade, historicoPet: historicoPet };
+    pets.push(pet);
+    alert("Pet cadastrado com sucesso!");
 
     form.reset();
-}) 
+});
