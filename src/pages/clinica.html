@@ -108,12 +108,17 @@
           />
         </div>
         <div class="form-group">
-          <label class="form-check-label" for="especialidades">Especialidades: </label>
-          <input type="text" class="form-control" id="especialidades" />
+          <select form="select-especialidade">Selecione especialidade</select>
+          <option value="pequeno-porte">Pequenos porte</option>
+          <option value="medio-porte">Médio porte</option>
+          <option value="animais-silvestes">Animais silvestres</option>
         </div>
         <div class="form-group">
-          <label class="form-check-label" for="veterinarios">Veterinarios disponiveis: </label>
-          <input type="text" class="form-control" id="veterinarios" />
+          <select name="veterinarios" id="veterinarios">Veterinarios disponiveis:</select>
+          <option value="vet-1">Veterinário 1</option>
+          <option value="vet-2">Veterinário 2</option>
+          <option value="vet-3">Veterinário 3</option>
+          
         </div>
         <div class="form-group">
           <label class="form-check-label" for="convenios">
@@ -124,6 +129,8 @@
         <button type="submit" class="btn btn-primary mt-4">Submit</button>
       </form>
     </section>
+
+    <script src="../js/clinica.js"></script>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

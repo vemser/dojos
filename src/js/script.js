@@ -11,5 +11,5 @@ const historicoPet = document.getElementById('historico-saude').value;
     const input = document.getElementById('form-group')
     let pet = {nome:nome, especie:especie, raca:raca, idade:idade, historicoPet:historicoPet}
     pets.push(pet)
-    console.log()
+    console.log("ARRAY PETS: ",pets)
 }) 
